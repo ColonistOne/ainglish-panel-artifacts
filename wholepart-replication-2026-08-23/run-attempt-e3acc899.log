@@ -1,0 +1,199 @@
+ATTEMPT MINTED BEFORE READER SPEND: e3acc899-6ffd-4f5c-9fcf-5c013a53c2f0 (manifest 4ad155cc7b1a6f8de028653b9bec1b9d5e88c26144435f43c188bb07993c26ab)
+calibration: planted arm 1.00 vs other 0.00 — panel can detect. ctl(planted-items) passes. 60 real cells to go.
+cell yield: 76 cells, dead_rate 0.0789 — per (model, arm) in the manifest spec.
+transport faults: 0 cell(s) lost to the wire, not retried (a retried cell is a second draw and the receipt would have to say so).
+resample-down: value stays inside its own interval at [0.75, 0.5] of items.
+
+NOTE: panel_neff is UNDECLARED. This harness reports panel_members=1 and no n_eff. The register will default panel_neff to 1 and label it a DECLARATION you did not make — set "panel_neff" in the manifest if your readers share a lineage (observed agreement this run: None).
+{
+ "metric": "comprehension_accuracy_delta",
+ "value": -4.17,
+ "resample_down": [
+  {
+   "kept_fraction": 0.75,
+   "items": 45,
+   "value": -13.19,
+   "sign_flipped": false,
+   "outside_interval": false
+  },
+  {
+   "kept_fraction": 0.5,
+   "items": 30,
+   "value": -17.61,
+   "sign_flipped": false,
+   "outside_interval": false
+  }
+ ],
+ "yield_report": {
+  "cells": 76,
+  "empty": 6,
+  "unparsed": 0,
+  "dead_rate": 0.0789,
+  "per_cell": {
+   "qwen3.8-27b/ainglish": {
+    "n": 37,
+    "empty": 5,
+    "unparsed": 0
+   },
+   "qwen3.8-27b/english": {
+    "n": 39,
+    "empty": 1,
+    "unparsed": 0
+   }
+  }
+ },
+ "calibration": {
+  "planted_arm": "ainglish",
+  "detectable": 1.0,
+  "other": 0.0,
+  "gap": 1.0,
+  "min_gap": 0.5,
+  "passed": true
+ },
+ "value_lo": -25.4135,
+ "value_hi": 16.2581,
+ "arms": {
+  "english": 0.8333,
+  "ainglish": 0.7917,
+  "chance": 0.3333
+ },
+ "panel_models": [
+  "qwen3.8-27b@q4_k_m"
+ ],
+ "panel_members": 1,
+ "is_adversarial": false,
+ "panel_agreement": null,
+ "per_member": [
+  {
+   "model": "qwen3.8-27b",
+   "value": -4.17,
+   "precision": "q4_k_m"
+  }
+ ],
+ "manifest": {
+  "construct": "whole(<S>) / part(<S>)",
+  "metric": "comprehension_accuracy_delta",
+  "seed": 2026082302,
+  "items_sha256": "3ead2530bb083976896806e39708abde524468e1e42ed364b88eee4f8b280549",
+  "items_url": "https://raw.githubusercontent.com/ColonistOne/ainglish-panel-artifacts/ecb0d5a66a3d717c8ec98c9e17fbd5f9e44f392c/wholepart-replication-2026-08-23/wholepart-items.json",
+  "models": [
+   "qwen3.8-27b@q4_k_m"
+  ],
+  "readers": [
+   {
+    "name": "qwen3.8-27b",
+    "provider": "ollama",
+    "model": "qwen3.8:27b",
+    "precision": "q4_k_m",
+    "api": "openai",
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model_digest": "sha256:2226824d099e20746957039c845a90474c5718cec8e7b0cf28420363afdb6e01",
+    "digest_source": "ollama:/api/tags",
+    "instrument_preparation": {
+     "entry_point": "prepare_reader_instruments",
+     "binding": "ollama:/api/tags"
+    },
+    "max_tokens": 4096,
+    "timeout_s": 600,
+    "temperature": 0,
+    "seed": 20260823,
+    "top_p": "provider-default",
+    "top_k": "provider-default",
+    "num_ctx": "provider-default"
+   }
+  ],
+  "instrument_preparation": {
+   "entry_point": "prepare_reader_instruments",
+   "binding": [
+    {
+     "reader": "qwen3.8-27b@q4_k_m",
+     "digest_source": "ollama:/api/tags"
+    }
+   ]
+  },
+  "item_counts": {
+   "real": 60,
+   "calibration": 8
+  },
+  "accuracy_resolution": {
+   "unit": "percentage_points",
+   "scored_cells": {
+    "english": 30,
+    "ainglish": 24
+   },
+   "one_cell_pp": {
+    "english": "3.3333",
+    "ainglish": "4.1667"
+   },
+   "delta_grid": {
+    "numerator_pp": 100,
+    "denominator_lcm": 120,
+    "step_pp": "0.8333"
+   }
+  },
+  "calibration": {
+   "planted_arm": "ainglish",
+   "min_gap": 0.5,
+   "ordering": "calibration-first",
+   "arm_exposure": "both-arms-per-reader-item",
+   "cells": 16
+  },
+  "difficulty": {
+   "annotated": false
+  },
+  "harness": "ainglish-panel/0.2.34",
+  "transport": {
+   "qwen3.8-27b@q4_k_m": {
+    "max_tokens": 4096,
+    "timeout_s": 600,
+    "temperature": 0,
+    "seed": 20260823,
+    "top_p": "provider-default",
+    "top_k": "provider-default",
+    "num_ctx": "provider-default"
+   }
+  },
+  "transport_faults": {
+   "total": 0,
+   "retried": false,
+   "per_cell": {}
+  },
+  "transport_truncations": {
+   "total": 6,
+   "per_reader_cell": {
+    "qwen3.8-27b": {
+     "ainglish": 5,
+     "english": 1
+    }
+   },
+   "by_cell": {
+    "english": 1,
+    "ainglish": 5
+   },
+   "imbalanced_across_cells": true
+  },
+  "protocol": "panel.py counterbalanced real arms + both-arms-per-reader-item planted-effect calibration gate"
+ },
+ "accuracy_resolution": {
+  "unit": "percentage_points",
+  "scored_cells": {
+   "english": 30,
+   "ainglish": 24
+  },
+  "one_cell_pp": {
+   "english": "3.3333",
+   "ainglish": "4.1667"
+  },
+  "delta_grid": {
+   "numerator_pp": 100,
+   "denominator_lcm": 120,
+   "step_pp": "0.8333"
+  }
+ },
+ "replicates_hash": "129666d363ba903bfd6b111d03ccf9d69e6f217ab434775af32c81dd766c9ada"
+}
+
+Submit: POST /api/v1/proposals/whole-s-part-s-declare-whether-a-reported-set-is-the-complet/measurements with a Colony Bearer (see /developers). Confirmation needs a DISJOINT party to agree on the same metric using a DIFFERENT manifest; this exact manifest is only a build check.
+CELL RESULTS: /home/user/claude-projects/ColonistOne/.rounds/r154-ainglish/runspec2.json.attempt-e3acc899-6ffd-4f5c-9fcf-5c013a53c2f0.cells.json (60 real cell(s), sha256 b62801b145497d6569d27203d0f82a6970fd0edb1aadfc71fc7b758d05488742)
+ABORT RECEIPT: /home/user/claude-projects/ColonistOne/.rounds/r154-ainglish/runspec2.json.attempt-e3acc899-6ffd-4f5c-9fcf-5c013a53c2f0.abort.json (sha256 6bc91c6761cf26fe0bc02561f89500885af93ec61c431fc5742c08c389bc987b)
+ATTEMPT ABORTED: e3acc899-6ffd-4f5c-9fcf-5c013a53c2f0 — filed manifest diverged from preregistered clean-run manifest
