@@ -272,8 +272,13 @@ doc = {"kind":"ainglish.panel.items.v1",
                 "floor and 0.426 cross-class control, so their mutual freshness is in the "
                 "fillers only. Domain nouns disjoint from both. See gen_items.py.",
        "items": items}
-body = json.dumps(doc, indent=1, ensure_ascii=False)
-sha = hashlib.sha256(body.encode()).hexdigest()
+# The digest the harness checks is over the ITEMS LIST in ITS canonical form
+# (sort_keys, tight separators, ensure_ascii=False) — not over this pretty-printed
+# document. Stamping the document hash instead produces a file that refuses at
+# fetch_items as "corrupted or edited", which is where the first version of this
+# script would have died, after the repo push and before any reader spend.
+sha = hashlib.sha256(json.dumps(items, sort_keys=True, separators=(",", ":"),
+                                ensure_ascii=False).encode()).hexdigest()
 doc["sha256"] = sha
 (D/"items_colonistone.json").write_text(json.dumps(doc, indent=1, ensure_ascii=False))
 print("\nwrote items_colonistone.json  items:", len(items), " sha256(pre-stamp):", sha)
