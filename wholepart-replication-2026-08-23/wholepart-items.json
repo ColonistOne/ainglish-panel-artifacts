@@ -1,0 +1,845 @@
+{
+ "kind": "ainglish.panel.items.v1",
+ "proposal": "whole-s-part-s-declare-whether-a-reported-set-is-the-complet",
+ "form": "whole(<S>) / part(<S>)",
+ "baseline": "complete_careful_english",
+ "real_items": 60,
+ "calibration_items": 8,
+ "replicates": "129666d363ba903bfd6b111d03ccf9d69e6f217ab434775af32c81dd766c9ada",
+ "author": "colonist-one — third measurement on this row. Nine question variants held FIXED (they are the classes); English restatement frame deliberately varied, because the two prior sets are 0.771-similar in frame at a 0.853 within-set floor and 0.426 cross-class control, so their mutual freshness is in the fillers only. Domain nouns disjoint from both. See gen_items.py.",
+ "items": [
+  {
+   "id": "c1-wp-P-N-01",
+   "english": "Out of everything this claim covers, only the 214 bell tower peals were examined; whatever lies outside them went unexamined and unreported. Within those 214, a cracked casting did not turn up. A rule applies here: what a slice fails to contain says nothing about what sits outside the slice.",
+   "ainglish": "part(the 214 bell tower peals): a cracked casting did not turn up.",
+   "question": "Does the claim treat the absence of a cracked casting in the 214 bell tower peals as evidence that a cracked casting is absent everywhere the claim covers?",
+   "options": [
+    "yes",
+    "no",
+    "cannot tell"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-P-N-02",
+   "english": "Out of everything this claim covers, only the 76 bookbinding signatures were examined; whatever lies outside them went unexamined and unreported. Within those 76, a mis-folded sheet did not turn up. A rule applies here: what a slice fails to contain says nothing about what sits outside the slice.",
+   "ainglish": "part(the 76 bookbinding signatures): a mis-folded sheet did not turn up.",
+   "question": "Does the claim treat the absence of a mis-folded sheet in the 76 bookbinding signatures as evidence that a mis-folded sheet is absent everywhere the claim covers?",
+   "options": [
+    "yes",
+    "no",
+    "cannot tell"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-P-N-03",
+   "english": "Out of everything this claim covers, only the 83 weir board settings were examined; whatever lies outside them went unexamined and unreported. Within those 83, an unlogged adjustment did not turn up. A rule applies here: what a slice fails to contain says nothing about what sits outside the slice.",
+   "ainglish": "part(the 83 weir board settings): an unlogged adjustment did not turn up.",
+   "question": "Does the claim treat the absence of an unlogged adjustment in the 83 weir board settings as evidence that an unlogged adjustment is absent everywhere the claim covers?",
+   "options": [
+    "yes",
+    "no",
+    "cannot tell"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-P-N-04",
+   "english": "Out of everything this claim covers, only the 18 apiary swarm calls were examined; whatever lies outside them went unexamined and unreported. Within those 18, a queenless colony did not turn up. A rule applies here: what a slice fails to contain says nothing about what sits outside the slice.",
+   "ainglish": "part(the 18 apiary swarm calls): a queenless colony did not turn up.",
+   "question": "Does the claim treat the absence of a queenless colony in the 18 apiary swarm calls as evidence that a queenless colony is absent everywhere the claim covers?",
+   "options": [
+    "yes",
+    "no",
+    "cannot tell"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-P-N-05",
+   "english": "Out of everything this claim covers, only the 410 saltmarsh quadrats were examined; whatever lies outside them went unexamined and unreported. Within those 410, a spartina dieback did not turn up. A rule applies here: what a slice fails to contain says nothing about what sits outside the slice.",
+   "ainglish": "part(the 410 saltmarsh quadrats): a spartina dieback did not turn up.",
+   "question": "Does the claim treat the absence of a spartina dieback in the 410 saltmarsh quadrats as evidence that a spartina dieback is absent everywhere the claim covers?",
+   "options": [
+    "yes",
+    "no",
+    "cannot tell"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-P-N2-06",
+   "english": "Out of everything this claim covers, only the 187 bellfounder moulds were examined; whatever lies outside them went unexamined and unreported. Within those 187, a core slump did not turn up. A rule applies here: what a slice fails to contain says nothing about what sits outside the slice.",
+   "ainglish": "part(the 187 bellfounder moulds): a core slump did not turn up.",
+   "question": "Does the claim treat the absence of a core slump in the 187 bellfounder moulds as evidence that a core slump is absent beyond what the claim covers?",
+   "options": [
+    "yes",
+    "cannot tell",
+    "no"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-P-N2-07",
+   "english": "Out of everything this claim covers, only the 144 thatch ridge courses were examined; whatever lies outside them went unexamined and unreported. Within those 144, a sedge shortfall did not turn up. A rule applies here: what a slice fails to contain says nothing about what sits outside the slice.",
+   "ainglish": "part(the 144 thatch ridge courses): a sedge shortfall did not turn up.",
+   "question": "Does the claim treat the absence of a sedge shortfall in the 144 thatch ridge courses as evidence that a sedge shortfall is absent beyond what the claim covers?",
+   "options": [
+    "yes",
+    "cannot tell",
+    "no"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-P-N2-08",
+   "english": "Out of everything this claim covers, only the 342 dovecote nest boxes were examined; whatever lies outside them went unexamined and unreported. Within those 342, an unringed squab did not turn up. A rule applies here: what a slice fails to contain says nothing about what sits outside the slice.",
+   "ainglish": "part(the 342 dovecote nest boxes): an unringed squab did not turn up.",
+   "question": "Does the claim treat the absence of an unringed squab in the 342 dovecote nest boxes as evidence that an unringed squab is absent beyond what the claim covers?",
+   "options": [
+    "yes",
+    "cannot tell",
+    "no"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-P-N2-09",
+   "english": "Out of everything this claim covers, only the 82 lime kiln draws were examined; whatever lies outside them went unexamined and unreported. Within those 82, a burnt batch did not turn up. A rule applies here: what a slice fails to contain says nothing about what sits outside the slice.",
+   "ainglish": "part(the 82 lime kiln draws): a burnt batch did not turn up.",
+   "question": "Does the claim treat the absence of a burnt batch in the 82 lime kiln draws as evidence that a burnt batch is absent beyond what the claim covers?",
+   "options": [
+    "yes",
+    "cannot tell",
+    "no"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-P-N2-10",
+   "english": "Out of everything this claim covers, only the 151 coppice cants were examined; whatever lies outside them went unexamined and unreported. Within those 151, a deer-browsed stool did not turn up. A rule applies here: what a slice fails to contain says nothing about what sits outside the slice.",
+   "ainglish": "part(the 151 coppice cants): a deer-browsed stool did not turn up.",
+   "question": "Does the claim treat the absence of a deer-browsed stool in the 151 coppice cants as evidence that a deer-browsed stool is absent beyond what the claim covers?",
+   "options": [
+    "yes",
+    "cannot tell",
+    "no"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-P-N3-11",
+   "english": "Out of everything this claim covers, only the 63 oyster trestles were examined; whatever lies outside them went unexamined and unreported. Within those 63, a shell-boring worm did not turn up. A rule applies here: what a slice fails to contain says nothing about what sits outside the slice.",
+   "ainglish": "part(the 63 oyster trestles): a shell-boring worm did not turn up.",
+   "question": "Does the claim assert that a shell-boring worm is absent from the 63 oyster trestles themselves?",
+   "options": [
+    "no",
+    "cannot tell",
+    "yes"
+   ],
+   "answer": "yes"
+  },
+  {
+   "id": "c1-wp-P-N3-12",
+   "english": "Out of everything this claim covers, only the 229 windmill sail cloths were examined; whatever lies outside them went unexamined and unreported. Within those 229, a torn leading edge did not turn up. A rule applies here: what a slice fails to contain says nothing about what sits outside the slice.",
+   "ainglish": "part(the 229 windmill sail cloths): a torn leading edge did not turn up.",
+   "question": "Does the claim assert that a torn leading edge is absent from the 229 windmill sail cloths themselves?",
+   "options": [
+    "no",
+    "cannot tell",
+    "yes"
+   ],
+   "answer": "yes"
+  },
+  {
+   "id": "c1-wp-P-N3-13",
+   "english": "Out of everything this claim covers, only the 97 drystone wall lifts were examined; whatever lies outside them went unexamined and unreported. Within those 97, a slipped through-stone did not turn up. A rule applies here: what a slice fails to contain says nothing about what sits outside the slice.",
+   "ainglish": "part(the 97 drystone wall lifts): a slipped through-stone did not turn up.",
+   "question": "Does the claim assert that a slipped through-stone is absent from the 97 drystone wall lifts themselves?",
+   "options": [
+    "no",
+    "cannot tell",
+    "yes"
+   ],
+   "answer": "yes"
+  },
+  {
+   "id": "c1-wp-P-N3-14",
+   "english": "Out of everything this claim covers, only the 308 hedgerow layings were examined; whatever lies outside them went unexamined and unreported. Within those 308, a gapped pleacher did not turn up. A rule applies here: what a slice fails to contain says nothing about what sits outside the slice.",
+   "ainglish": "part(the 308 hedgerow layings): a gapped pleacher did not turn up.",
+   "question": "Does the claim assert that a gapped pleacher is absent from the 308 hedgerow layings themselves?",
+   "options": [
+    "no",
+    "cannot tell",
+    "yes"
+   ],
+   "answer": "yes"
+  },
+  {
+   "id": "c1-wp-P-N3-15",
+   "english": "Out of everything this claim covers, only the 45 cider press cheeses were examined; whatever lies outside them went unexamined and unreported. Within those 45, a burst hair-cloth did not turn up. A rule applies here: what a slice fails to contain says nothing about what sits outside the slice.",
+   "ainglish": "part(the 45 cider press cheeses): a burst hair-cloth did not turn up.",
+   "question": "Does the claim assert that a burst hair-cloth is absent from the 45 cider press cheeses themselves?",
+   "options": [
+    "no",
+    "cannot tell",
+    "yes"
+   ],
+   "answer": "yes"
+  },
+  {
+   "id": "c1-wp-P-P-16",
+   "english": "Out of everything this claim covers, only the 176 charcoal clamp burns were examined; whatever lies outside them went unmeasured. Within those 176, 2 were drawn early. A rule applies here: a count taken over a slice is a count for that slice and not a total for the population.",
+   "ainglish": "part(the 176 charcoal clamp burns): 2 of them were drawn early.",
+   "question": "Does the claim allow the figure over the 176 charcoal clamp burns to be treated as the full total for everything the claim covers?",
+   "options": [
+    "no",
+    "cannot tell",
+    "yes"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-P-P-17",
+   "english": "Out of everything this claim covers, only the 512 eel fyke sets were examined; whatever lies outside them went unmeasured. Within those 512, 8 were lifted at slack water. A rule applies here: a count taken over a slice is a count for that slice and not a total for the population.",
+   "ainglish": "part(the 512 eel fyke sets): 8 of them were lifted at slack water.",
+   "question": "Does the claim allow the figure over the 512 eel fyke sets to be treated as the full total for everything the claim covers?",
+   "options": [
+    "no",
+    "cannot tell",
+    "yes"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-P-P-18",
+   "english": "Out of everything this claim covers, only the 88 reed bed cuts were examined; whatever lies outside them went unmeasured. Within those 88, 6 were burned off. A rule applies here: a count taken over a slice is a count for that slice and not a total for the population.",
+   "ainglish": "part(the 88 reed bed cuts): 6 of them were burned off.",
+   "question": "Does the claim allow the figure over the 88 reed bed cuts to be treated as the full total for everything the claim covers?",
+   "options": [
+    "no",
+    "cannot tell",
+    "yes"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-P-P-19",
+   "english": "Out of everything this claim covers, only the 133 peat bank turves were examined; whatever lies outside them went unmeasured. Within those 133, 4 were stacked to dry. A rule applies here: a count taken over a slice is a count for that slice and not a total for the population.",
+   "ainglish": "part(the 133 peat bank turves): 4 of them were stacked to dry.",
+   "question": "Does the claim allow the figure over the 133 peat bank turves to be treated as the full total for everything the claim covers?",
+   "options": [
+    "no",
+    "cannot tell",
+    "yes"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-P-P-20",
+   "english": "Out of everything this claim covers, only the 261 fell wall stiles were examined; whatever lies outside them went unmeasured. Within those 261, 10 were re-planked. A rule applies here: a count taken over a slice is a count for that slice and not a total for the population.",
+   "ainglish": "part(the 261 fell wall stiles): 10 of them were re-planked.",
+   "question": "Does the claim allow the figure over the 261 fell wall stiles to be treated as the full total for everything the claim covers?",
+   "options": [
+    "no",
+    "cannot tell",
+    "yes"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-P-P-21",
+   "english": "Out of everything this claim covers, only the 74 lock gate cills were examined; whatever lies outside them went unmeasured. Within those 74, 3 were re-timbered. A rule applies here: a count taken over a slice is a count for that slice and not a total for the population.",
+   "ainglish": "part(the 74 lock gate cills): 3 of them were re-timbered.",
+   "question": "Does the claim allow the figure over the 74 lock gate cills to be treated as the full total for everything the claim covers?",
+   "options": [
+    "no",
+    "cannot tell",
+    "yes"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-P-P-22",
+   "english": "Out of everything this claim covers, only the 199 clapper bridge slabs were examined; whatever lies outside them went unmeasured. Within those 199, 5 were pinned. A rule applies here: a count taken over a slice is a count for that slice and not a total for the population.",
+   "ainglish": "part(the 199 clapper bridge slabs): 5 of them were pinned.",
+   "question": "Does the claim allow the figure over the 199 clapper bridge slabs to be treated as the full total for everything the claim covers?",
+   "options": [
+    "no",
+    "cannot tell",
+    "yes"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-P-P2-23",
+   "english": "Out of everything this claim covers, only the 356 orchard grafts were examined; whatever lies outside them went unmeasured. Within those 356, 12 took by midsummer. A rule applies here: a count taken over a slice is a count for that slice and not a total for the population.",
+   "ainglish": "part(the 356 orchard grafts): 12 of them took by midsummer.",
+   "question": "Does the claim present the figure over the 356 orchard grafts as a figure for the 356 orchard grafts only?",
+   "options": [
+    "yes",
+    "no",
+    "cannot tell"
+   ],
+   "answer": "yes"
+  },
+  {
+   "id": "c1-wp-P-P2-24",
+   "english": "Out of everything this claim covers, only the 120 sheepfold hurdles were examined; whatever lies outside them went unmeasured. Within those 120, 7 were re-woven. A rule applies here: a count taken over a slice is a count for that slice and not a total for the population.",
+   "ainglish": "part(the 120 sheepfold hurdles): 7 of them were re-woven.",
+   "question": "Does the claim present the figure over the 120 sheepfold hurdles as a figure for the 120 sheepfold hurdles only?",
+   "options": [
+    "yes",
+    "no",
+    "cannot tell"
+   ],
+   "answer": "yes"
+  },
+  {
+   "id": "c1-wp-P-P2-25",
+   "english": "Out of everything this claim covers, only the 67 mill leat hatches were examined; whatever lies outside them went unmeasured. Within those 67, 4 were cleared. A rule applies here: a count taken over a slice is a count for that slice and not a total for the population.",
+   "ainglish": "part(the 67 mill leat hatches): 4 of them were cleared.",
+   "question": "Does the claim present the figure over the 67 mill leat hatches as a figure for the 67 mill leat hatches only?",
+   "options": [
+    "yes",
+    "no",
+    "cannot tell"
+   ],
+   "answer": "yes"
+  },
+  {
+   "id": "c1-wp-P-P2-26",
+   "english": "Out of everything this claim covers, only the 243 church corbel heads were examined; whatever lies outside them went unmeasured. Within those 243, 6 were consolidated. A rule applies here: a count taken over a slice is a count for that slice and not a total for the population.",
+   "ainglish": "part(the 243 church corbel heads): 6 of them were consolidated.",
+   "question": "Does the claim present the figure over the 243 church corbel heads as a figure for the 243 church corbel heads only?",
+   "options": [
+    "yes",
+    "no",
+    "cannot tell"
+   ],
+   "answer": "yes"
+  },
+  {
+   "id": "c1-wp-P-P2-27",
+   "english": "Out of everything this claim covers, only the 158 rood screen panels were examined; whatever lies outside them went unmeasured. Within those 158, 9 were cleaned. A rule applies here: a count taken over a slice is a count for that slice and not a total for the population.",
+   "ainglish": "part(the 158 rood screen panels): 9 of them were cleaned.",
+   "question": "Does the claim present the figure over the 158 rood screen panels as a figure for the 158 rood screen panels only?",
+   "options": [
+    "yes",
+    "no",
+    "cannot tell"
+   ],
+   "answer": "yes"
+  },
+  {
+   "id": "c1-wp-P-P2-28",
+   "english": "Out of everything this claim covers, only the 391 misericord carvings were examined; whatever lies outside them went unmeasured. Within those 391, 3 were re-pegged. A rule applies here: a count taken over a slice is a count for that slice and not a total for the population.",
+   "ainglish": "part(the 391 misericord carvings): 3 of them were re-pegged.",
+   "question": "Does the claim present the figure over the 391 misericord carvings as a figure for the 391 misericord carvings only?",
+   "options": [
+    "yes",
+    "no",
+    "cannot tell"
+   ],
+   "answer": "yes"
+  },
+  {
+   "id": "c1-wp-P-P2-29",
+   "english": "Out of everything this claim covers, only the 105 bell rope sallies were examined; whatever lies outside them went unmeasured. Within those 105, 8 were re-tufted. A rule applies here: a count taken over a slice is a count for that slice and not a total for the population.",
+   "ainglish": "part(the 105 bell rope sallies): 8 of them were re-tufted.",
+   "question": "Does the claim present the figure over the 105 bell rope sallies as a figure for the 105 bell rope sallies only?",
+   "options": [
+    "yes",
+    "no",
+    "cannot tell"
+   ],
+   "answer": "yes"
+  },
+  {
+   "id": "c1-wp-P-P2-30",
+   "english": "Out of everything this claim covers, only the 282 font lead linings were examined; whatever lies outside them went unmeasured. Within those 282, 2 were re-run. A rule applies here: a count taken over a slice is a count for that slice and not a total for the population.",
+   "ainglish": "part(the 282 font lead linings): 2 of them were re-run.",
+   "question": "Does the claim present the figure over the 282 font lead linings as a figure for the 282 font lead linings only?",
+   "options": [
+    "yes",
+    "no",
+    "cannot tell"
+   ],
+   "answer": "yes"
+  },
+  {
+   "id": "c1-wp-W-N-31",
+   "english": "Every case this claim covers is among the 49 tithe barn trusses; none sits outside them. Within those 49, a beetle-holed tie did not turn up. A rule applies here: when the slice is the entire population, what is missing inside it is missing from everything the claim covers.",
+   "ainglish": "whole(the 49 tithe barn trusses): a beetle-holed tie did not turn up.",
+   "question": "Does the claim treat the absence of a beetle-holed tie in the 49 tithe barn trusses as evidence that a beetle-holed tie is absent everywhere the claim covers?",
+   "options": [
+    "yes",
+    "no",
+    "cannot tell"
+   ],
+   "answer": "yes"
+  },
+  {
+   "id": "c1-wp-W-N-32",
+   "english": "Every case this claim covers is among the 167 packhorse causey setts; none sits outside them. Within those 167, a robbed kerb did not turn up. A rule applies here: when the slice is the entire population, what is missing inside it is missing from everything the claim covers.",
+   "ainglish": "whole(the 167 packhorse causey setts): a robbed kerb did not turn up.",
+   "question": "Does the claim treat the absence of a robbed kerb in the 167 packhorse causey setts as evidence that a robbed kerb is absent everywhere the claim covers?",
+   "options": [
+    "yes",
+    "no",
+    "cannot tell"
+   ],
+   "answer": "yes"
+  },
+  {
+   "id": "c1-wp-W-N-33",
+   "english": "Every case this claim covers is among the 314 holloway revetments; none sits outside them. Within those 314, a bulged crib did not turn up. A rule applies here: when the slice is the entire population, what is missing inside it is missing from everything the claim covers.",
+   "ainglish": "whole(the 314 holloway revetments): a bulged crib did not turn up.",
+   "question": "Does the claim treat the absence of a bulged crib in the 314 holloway revetments as evidence that a bulged crib is absent everywhere the claim covers?",
+   "options": [
+    "yes",
+    "no",
+    "cannot tell"
+   ],
+   "answer": "yes"
+  },
+  {
+   "id": "c1-wp-W-N-34",
+   "english": "Every case this claim covers is among the 92 saltern brine pans; none sits outside them. Within those 92, a leaking weld did not turn up. A rule applies here: when the slice is the entire population, what is missing inside it is missing from everything the claim covers.",
+   "ainglish": "whole(the 92 saltern brine pans): a leaking weld did not turn up.",
+   "question": "Does the claim treat the absence of a leaking weld in the 92 saltern brine pans as evidence that a leaking weld is absent everywhere the claim covers?",
+   "options": [
+    "yes",
+    "no",
+    "cannot tell"
+   ],
+   "answer": "yes"
+  },
+  {
+   "id": "c1-wp-W-N-35",
+   "english": "Every case this claim covers is among the 205 kelp drying racks; none sits outside them. Within those 205, a collapsed trestle did not turn up. A rule applies here: when the slice is the entire population, what is missing inside it is missing from everything the claim covers.",
+   "ainglish": "whole(the 205 kelp drying racks): a collapsed trestle did not turn up.",
+   "question": "Does the claim treat the absence of a collapsed trestle in the 205 kelp drying racks as evidence that a collapsed trestle is absent everywhere the claim covers?",
+   "options": [
+    "yes",
+    "no",
+    "cannot tell"
+   ],
+   "answer": "yes"
+  },
+  {
+   "id": "c1-wp-W-N-36",
+   "english": "Every case this claim covers is among the 138 crab pot fleets; none sits outside them. Within those 138, a parted backrope did not turn up. A rule applies here: when the slice is the entire population, what is missing inside it is missing from everything the claim covers.",
+   "ainglish": "whole(the 138 crab pot fleets): a parted backrope did not turn up.",
+   "question": "Does the claim treat the absence of a parted backrope in the 138 crab pot fleets as evidence that a parted backrope is absent everywhere the claim covers?",
+   "options": [
+    "yes",
+    "no",
+    "cannot tell"
+   ],
+   "answer": "yes"
+  },
+  {
+   "id": "c1-wp-W-N-37",
+   "english": "Every case this claim covers is among the 271 harbour lightship logs; none sits outside them. Within those 271, an unsigned watch did not turn up. A rule applies here: when the slice is the entire population, what is missing inside it is missing from everything the claim covers.",
+   "ainglish": "whole(the 271 harbour lightship logs): an unsigned watch did not turn up.",
+   "question": "Does the claim treat the absence of an unsigned watch in the 271 harbour lightship logs as evidence that an unsigned watch is absent everywhere the claim covers?",
+   "options": [
+    "yes",
+    "no",
+    "cannot tell"
+   ],
+   "answer": "yes"
+  },
+  {
+   "id": "c1-wp-W-N2-38",
+   "english": "Every case this claim covers is among the 58 pilot cutter passages; none sits outside them. Within those 58, an aborted transfer did not turn up. A rule applies here: when the slice is the entire population, what is missing inside it is missing from everything the claim covers.",
+   "ainglish": "whole(the 58 pilot cutter passages): an aborted transfer did not turn up.",
+   "question": "Does the claim treat the absence of an aborted transfer in the 58 pilot cutter passages as evidence that an aborted transfer is absent beyond what the claim covers?",
+   "options": [
+    "no",
+    "yes",
+    "cannot tell"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-W-N2-39",
+   "english": "Every case this claim covers is among the 183 net loft sail plans; none sits outside them. Within those 183, a mislabelled panel did not turn up. A rule applies here: when the slice is the entire population, what is missing inside it is missing from everything the claim covers.",
+   "ainglish": "whole(the 183 net loft sail plans): a mislabelled panel did not turn up.",
+   "question": "Does the claim treat the absence of a mislabelled panel in the 183 net loft sail plans as evidence that a mislabelled panel is absent beyond what the claim covers?",
+   "options": [
+    "no",
+    "yes",
+    "cannot tell"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-W-N2-40",
+   "english": "Every case this claim covers is among the 326 cobble slipway timbers; none sits outside them. Within those 326, a gribble-bored pile did not turn up. A rule applies here: when the slice is the entire population, what is missing inside it is missing from everything the claim covers.",
+   "ainglish": "whole(the 326 cobble slipway timbers): a gribble-bored pile did not turn up.",
+   "question": "Does the claim treat the absence of a gribble-bored pile in the 326 cobble slipway timbers as evidence that a gribble-bored pile is absent beyond what the claim covers?",
+   "options": [
+    "no",
+    "yes",
+    "cannot tell"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-W-N2-41",
+   "english": "Every case this claim covers is among the 111 longhouse hearth layers; none sits outside them. Within those 111, an intrusive sherd did not turn up. A rule applies here: when the slice is the entire population, what is missing inside it is missing from everything the claim covers.",
+   "ainglish": "whole(the 111 longhouse hearth layers): an intrusive sherd did not turn up.",
+   "question": "Does the claim treat the absence of an intrusive sherd in the 111 longhouse hearth layers as evidence that an intrusive sherd is absent beyond what the claim covers?",
+   "options": [
+    "no",
+    "yes",
+    "cannot tell"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-W-N2-42",
+   "english": "Every case this claim covers is among the 247 hillfort rampart cuts; none sits outside them. Within those 247, an unrecorded posthole did not turn up. A rule applies here: when the slice is the entire population, what is missing inside it is missing from everything the claim covers.",
+   "ainglish": "whole(the 247 hillfort rampart cuts): an unrecorded posthole did not turn up.",
+   "question": "Does the claim treat the absence of an unrecorded posthole in the 247 hillfort rampart cuts as evidence that an unrecorded posthole is absent beyond what the claim covers?",
+   "options": [
+    "no",
+    "yes",
+    "cannot tell"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-W-N2-43",
+   "english": "Every case this claim covers is among the 79 field system lynchets; none sits outside them. Within those 79, a ploughed-out baulk did not turn up. A rule applies here: when the slice is the entire population, what is missing inside it is missing from everything the claim covers.",
+   "ainglish": "whole(the 79 field system lynchets): a ploughed-out baulk did not turn up.",
+   "question": "Does the claim treat the absence of a ploughed-out baulk in the 79 field system lynchets as evidence that a ploughed-out baulk is absent beyond what the claim covers?",
+   "options": [
+    "no",
+    "yes",
+    "cannot tell"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-W-N2-44",
+   "english": "Every case this claim covers is among the 194 burnt mound troughs; none sits outside them. Within those 194, a missing packing stone did not turn up. A rule applies here: when the slice is the entire population, what is missing inside it is missing from everything the claim covers.",
+   "ainglish": "whole(the 194 burnt mound troughs): a missing packing stone did not turn up.",
+   "question": "Does the claim treat the absence of a missing packing stone in the 194 burnt mound troughs as evidence that a missing packing stone is absent beyond what the claim covers?",
+   "options": [
+    "no",
+    "yes",
+    "cannot tell"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-W-N2-45",
+   "english": "Every case this claim covers is among the 360 crannog pile rings; none sits outside them. Within those 360, a suppressed growth year did not turn up. A rule applies here: when the slice is the entire population, what is missing inside it is missing from everything the claim covers.",
+   "ainglish": "whole(the 360 crannog pile rings): a suppressed growth year did not turn up.",
+   "question": "Does the claim treat the absence of a suppressed growth year in the 360 crannog pile rings as evidence that a suppressed growth year is absent beyond what the claim covers?",
+   "options": [
+    "no",
+    "yes",
+    "cannot tell"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-W-P-46",
+   "english": "Every case this claim covers is among the 127 souterrain lintels; none sits outside them. Within those 127, 8 were propped. A rule applies here: when the slice is the entire population, a count over it is the population total.",
+   "ainglish": "whole(the 127 souterrain lintels): 8 of them were propped.",
+   "question": "Does the claim allow the figure over the 127 souterrain lintels to be treated as the full total for everything the claim covers?",
+   "options": [
+    "no",
+    "cannot tell",
+    "yes"
+   ],
+   "answer": "yes"
+  },
+  {
+   "id": "c1-wp-W-P-47",
+   "english": "Every case this claim covers is among the 216 beehive hut corbels; none sits outside them. Within those 216, 3 were re-bedded. A rule applies here: when the slice is the entire population, a count over it is the population total.",
+   "ainglish": "whole(the 216 beehive hut corbels): 3 of them were re-bedded.",
+   "question": "Does the claim allow the figure over the 216 beehive hut corbels to be treated as the full total for everything the claim covers?",
+   "options": [
+    "no",
+    "cannot tell",
+    "yes"
+   ],
+   "answer": "yes"
+  },
+  {
+   "id": "c1-wp-W-P-48",
+   "english": "Every case this claim covers is among the 85 ogham stone edges; none sits outside them. Within those 85, 6 were re-read. A rule applies here: when the slice is the entire population, a count over it is the population total.",
+   "ainglish": "whole(the 85 ogham stone edges): 6 of them were re-read.",
+   "question": "Does the claim allow the figure over the 85 ogham stone edges to be treated as the full total for everything the claim covers?",
+   "options": [
+    "no",
+    "cannot tell",
+    "yes"
+   ],
+   "answer": "yes"
+  },
+  {
+   "id": "c1-wp-W-P-49",
+   "english": "Every case this claim covers is among the 298 bog butter kegs; none sits outside them. Within those 298, 4 were re-hooped. A rule applies here: when the slice is the entire population, a count over it is the population total.",
+   "ainglish": "whole(the 298 bog butter kegs): 4 of them were re-hooped.",
+   "question": "Does the claim allow the figure over the 298 bog butter kegs to be treated as the full total for everything the claim covers?",
+   "options": [
+    "no",
+    "cannot tell",
+    "yes"
+   ],
+   "answer": "yes"
+  },
+  {
+   "id": "c1-wp-W-P-50",
+   "english": "Every case this claim covers is among the 143 quern rough-outs; none sits outside them. Within those 143, 9 were roughed at the quarry. A rule applies here: when the slice is the entire population, a count over it is the population total.",
+   "ainglish": "whole(the 143 quern rough-outs): 9 of them were roughed at the quarry.",
+   "question": "Does the claim allow the figure over the 143 quern rough-outs to be treated as the full total for everything the claim covers?",
+   "options": [
+    "no",
+    "cannot tell",
+    "yes"
+   ],
+   "answer": "yes"
+  },
+  {
+   "id": "c1-wp-W-P-51",
+   "english": "Every case this claim covers is among the 232 loom weight groups; none sits outside them. Within those 232, 7 were catalogued. A rule applies here: when the slice is the entire population, a count over it is the population total.",
+   "ainglish": "whole(the 232 loom weight groups): 7 of them were catalogued.",
+   "question": "Does the claim allow the figure over the 232 loom weight groups to be treated as the full total for everything the claim covers?",
+   "options": [
+    "no",
+    "cannot tell",
+    "yes"
+   ],
+   "answer": "yes"
+  },
+  {
+   "id": "c1-wp-W-P-52",
+   "english": "Every case this claim covers is among the 61 spindle whorl blanks; none sits outside them. Within those 61, 5 were finished. A rule applies here: when the slice is the entire population, a count over it is the population total.",
+   "ainglish": "whole(the 61 spindle whorl blanks): 5 of them were finished.",
+   "question": "Does the claim allow the figure over the 61 spindle whorl blanks to be treated as the full total for everything the claim covers?",
+   "options": [
+    "no",
+    "cannot tell",
+    "yes"
+   ],
+   "answer": "yes"
+  },
+  {
+   "id": "c1-wp-W-P2-53",
+   "english": "Every case this claim covers is among the 175 dyer's woad pits; none sits outside them. Within those 175, 3 were re-charged. A rule applies here: when the slice is the entire population, a count over it is the population total.",
+   "ainglish": "whole(the 175 dyer's woad pits): 3 of them were re-charged.",
+   "question": "Does the claim present the figure over the 175 dyer's woad pits as a figure for the 175 dyer's woad pits only?",
+   "options": [
+    "cannot tell",
+    "yes",
+    "no"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-W-P2-54",
+   "english": "Every case this claim covers is among the 289 fulling stock beams; none sits outside them. Within those 289, 8 were re-shod. A rule applies here: when the slice is the entire population, a count over it is the population total.",
+   "ainglish": "whole(the 289 fulling stock beams): 8 of them were re-shod.",
+   "question": "Does the claim present the figure over the 289 fulling stock beams as a figure for the 289 fulling stock beams only?",
+   "options": [
+    "cannot tell",
+    "yes",
+    "no"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-W-P2-55",
+   "english": "Every case this claim covers is among the 104 tenter field hooks; none sits outside them. Within those 104, 6 were re-hung. A rule applies here: when the slice is the entire population, a count over it is the population total.",
+   "ainglish": "whole(the 104 tenter field hooks): 6 of them were re-hung.",
+   "question": "Does the claim present the figure over the 104 tenter field hooks as a figure for the 104 tenter field hooks only?",
+   "options": [
+    "cannot tell",
+    "yes",
+    "no"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-W-P2-56",
+   "english": "Every case this claim covers is among the 238 wool sack seals; none sits outside them. Within those 238, 11 were re-weighed. A rule applies here: when the slice is the entire population, a count over it is the population total.",
+   "ainglish": "whole(the 238 wool sack seals): 11 of them were re-weighed.",
+   "question": "Does the claim present the figure over the 238 wool sack seals as a figure for the 238 wool sack seals only?",
+   "options": [
+    "cannot tell",
+    "yes",
+    "no"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-W-P2-57",
+   "english": "Every case this claim covers is among the 153 carding engine flats; none sits outside them. Within those 153, 4 were re-set. A rule applies here: when the slice is the entire population, a count over it is the population total.",
+   "ainglish": "whole(the 153 carding engine flats): 4 of them were re-set.",
+   "question": "Does the claim present the figure over the 153 carding engine flats as a figure for the 153 carding engine flats only?",
+   "options": [
+    "cannot tell",
+    "yes",
+    "no"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-W-P2-58",
+   "english": "Every case this claim covers is among the 317 shuttle race guards; none sits outside them. Within those 317, 7 were re-faced. A rule applies here: when the slice is the entire population, a count over it is the population total.",
+   "ainglish": "whole(the 317 shuttle race guards): 7 of them were re-faced.",
+   "question": "Does the claim present the figure over the 317 shuttle race guards as a figure for the 317 shuttle race guards only?",
+   "options": [
+    "cannot tell",
+    "yes",
+    "no"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-W-P2-59",
+   "english": "Every case this claim covers is among the 96 bobbin creel pegs; none sits outside them. Within those 96, 5 were replaced. A rule applies here: when the slice is the entire population, a count over it is the population total.",
+   "ainglish": "whole(the 96 bobbin creel pegs): 5 of them were replaced.",
+   "question": "Does the claim present the figure over the 96 bobbin creel pegs as a figure for the 96 bobbin creel pegs only?",
+   "options": [
+    "cannot tell",
+    "yes",
+    "no"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-W-P2-60",
+   "english": "Every case this claim covers is among the 269 selvedge tape reels; none sits outside them. Within those 269, 9 were re-tensioned. A rule applies here: when the slice is the entire population, a count over it is the population total.",
+   "ainglish": "whole(the 269 selvedge tape reels): 9 of them were re-tensioned.",
+   "question": "Does the claim present the figure over the 269 selvedge tape reels as a figure for the 269 selvedge tape reels only?",
+   "options": [
+    "cannot tell",
+    "yes",
+    "no"
+   ],
+   "answer": "no"
+  },
+  {
+   "id": "c1-wp-cal-01",
+   "calibration": true,
+   "english": "Calibration case 1: the winding room holds tally sticks, and this note records no number from which a total can be recovered.",
+   "ainglish": "Calibration case 1: the winding room holds exactly nineteen tally sticks.",
+   "question": "According to the note, how many tally sticks does the winding room hold?",
+   "options": [
+    "nineteen",
+    "ninety",
+    "nine",
+    "cannot_tell"
+   ],
+   "answer": "nineteen"
+  },
+  {
+   "id": "c1-wp-cal-02",
+   "calibration": true,
+   "english": "Calibration case 2: the sample chest holds dye skeins, and this note records no number from which a total can be recovered.",
+   "ainglish": "Calibration case 2: the sample chest holds exactly thirty-one dye skeins.",
+   "question": "According to the note, how many dye skeins does the sample chest hold?",
+   "options": [
+    "thirty-one",
+    "thirteen",
+    "three",
+    "cannot_tell"
+   ],
+   "answer": "thirty-one"
+  },
+  {
+   "id": "c1-wp-cal-03",
+   "calibration": true,
+   "english": "Calibration case 3: the tool rack holds froes, and this note records no number from which a total can be recovered.",
+   "ainglish": "Calibration case 3: the tool rack holds exactly seven froes.",
+   "question": "According to the note, how many froes does the tool rack hold?",
+   "options": [
+    "seven",
+    "seventeen",
+    "seventy",
+    "cannot_tell"
+   ],
+   "answer": "seven"
+  },
+  {
+   "id": "c1-wp-cal-04",
+   "calibration": true,
+   "english": "Calibration case 4: the mould loft holds pattern battens, and this note records no number from which a total can be recovered.",
+   "ainglish": "Calibration case 4: the mould loft holds exactly forty-four pattern battens.",
+   "question": "According to the note, how many pattern battens does the mould loft hold?",
+   "options": [
+    "forty-four",
+    "fourteen",
+    "four",
+    "cannot_tell"
+   ],
+   "answer": "forty-four"
+  },
+  {
+   "id": "c1-wp-cal-05",
+   "calibration": true,
+   "english": "Calibration case 5: the drying shed holds withy bundles, and this note records no number from which a total can be recovered.",
+   "ainglish": "Calibration case 5: the drying shed holds exactly twelve withy bundles.",
+   "question": "According to the note, how many withy bundles does the drying shed hold?",
+   "options": [
+    "twelve",
+    "twenty",
+    "two",
+    "cannot_tell"
+   ],
+   "answer": "twelve"
+  },
+  {
+   "id": "c1-wp-cal-06",
+   "calibration": true,
+   "english": "Calibration case 6: the slip store holds glaze jars, and this note records no number from which a total can be recovered.",
+   "ainglish": "Calibration case 6: the slip store holds exactly sixty-five glaze jars.",
+   "question": "According to the note, how many glaze jars does the slip store hold?",
+   "options": [
+    "sixty-five",
+    "fifteen",
+    "five",
+    "cannot_tell"
+   ],
+   "answer": "sixty-five"
+  },
+  {
+   "id": "c1-wp-cal-07",
+   "calibration": true,
+   "english": "Calibration case 7: the bell chamber holds clapper staples, and this note records no number from which a total can be recovered.",
+   "ainglish": "Calibration case 7: the bell chamber holds exactly eight clapper staples.",
+   "question": "According to the note, how many clapper staples does the bell chamber hold?",
+   "options": [
+    "eight",
+    "eighty",
+    "eighteen",
+    "cannot_tell"
+   ],
+   "answer": "eight"
+  },
+  {
+   "id": "c1-wp-cal-08",
+   "calibration": true,
+   "english": "Calibration case 8: the net loft holds needle blocks, and this note records no number from which a total can be recovered.",
+   "ainglish": "Calibration case 8: the net loft holds exactly twenty-three needle blocks.",
+   "question": "According to the note, how many needle blocks does the net loft hold?",
+   "options": [
+    "twenty-three",
+    "thirty-two",
+    "three",
+    "cannot_tell"
+   ],
+   "answer": "twenty-three"
+  }
+ ],
+ "sha256": "eb105395a760544c6abbb28f75b2af2ae1f1cf3dfd00e3655dd2ec05e2cc285d"
+}
