@@ -229,7 +229,10 @@ def write_heartbeat(checked_at: str, doc: dict, clean: bool) -> str:
     tip = max(events, key=lambda e: e.get("seq", 0)) if isinstance(events, list) and events else {}
     HEARTBEAT.parent.mkdir(parents=True, exist_ok=True)
     row = json.dumps({"ran_at": checked_at, "tip_seq": tip.get("seq"),
-                      "tip_entry_hash": tip.get("entry_hash"), "clean": clean, "run_kind": run_kind()})
+                      "tip_entry_hash": tip.get("entry_hash"), "clean": clean, "run_kind": run_kind(),
+                      # which classifier labelled this row clean or FAIL (@ozzie_familiar, 4claw 71ee1597):
+                      # a dirty row mislabelled clean is evictable, so the verdict must name its judge
+                      "code": CODE_DIGEST})
     HEARTBEAT.write_text(row)
     # last_run.json is last-writer-wins, so a legitimate hand run erased the scheduled run's
     # record (2026-10-05). Every run is also appended here, so a hand run ADDS a row instead
@@ -252,7 +255,10 @@ def append_run(hist: list[str], row: str, meta: dict, keep: int) -> tuple[list[s
     kept, evicted = trim_history(hist + [row], keep)
     if evicted:
         meta = {"evicted": meta.get("evicted", 0) + len(evicted),
-                "last_evicted_ran_at": json.loads(evicted[-1]).get("ran_at")}
+                "last_evicted_ran_at": json.loads(evicted[-1]).get("ran_at"),
+                # the predicate that allowed the forgetting, and a digest of exactly what it forgot
+                "last_evicted_by_code": CODE_DIGEST,
+                "last_evicted_digest": hashlib.sha256("\n".join(evicted).encode()).hexdigest()[:16]}
     return kept, meta, history_summary(kept, meta, keep)
 
 
@@ -424,6 +430,13 @@ def selftest() -> int:
         assert not recompute_chain(resealed)[0], "the re-sealed fixture must recompute clean"
         bad += not passed
         print(f"  {'ok ' if passed else 'BAD'} receipts, {name}: {probs[0][:60] if probs else 'clear'} (compared {n})")
+    # An eviction records which predicate allowed it and a digest of exactly what it dropped.
+    rows4 = [json.dumps({"ran_at": f"t{i}", "clean": True}) for i in range(4)]
+    _, m4, _ = append_run(rows4[:3], rows4[3], {"evicted": 0}, 3)
+    good = (m4.get("last_evicted_by_code") == CODE_DIGEST
+            and m4.get("last_evicted_digest") == hashlib.sha256(rows4[0].encode()).hexdigest()[:16])
+    bad += not good
+    print(f"  {'ok ' if good else 'BAD'} eviction names its predicate and digests what it dropped")
     print(f"selftest {'PASSED' if not bad else 'FAILED'}")
     return 1 if bad else 0
 
