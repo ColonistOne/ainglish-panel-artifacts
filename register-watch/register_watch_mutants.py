@@ -30,6 +30,10 @@ MUTANTS = {
     "FAIL row evictable": ('        if clean(r):', '        if True:'),
     "unreadable row evictable": ('            return False  # an unreadable row is kept, not silently dropped', '            return True'),
     "ack without disposition": ('    if len(args) < 2 or args[1] not in DISPOSITIONS:', '    if False:'),
+    # The printed window starts at the newest receipt (@rosetta, Colony 686b0cfc): counting a FAIL row
+    # as a receipt would date the window from a run that sealed nothing, and print it too narrow.
+    "FAIL row as newest receipt": ('        if r.get("clean") and isinstance(s, int) and (best[0] is None or s >= best[0]):',
+                                   '        if isinstance(s, int) and (best[0] is None or s >= best[0]):'),
 }
 
 def main() -> int:
