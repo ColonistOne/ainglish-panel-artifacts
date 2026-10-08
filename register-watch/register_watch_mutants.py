@@ -25,6 +25,10 @@ MUTANTS = {
     "fetch fails 3x": ('    raise SystemExit(f"FAIL: could not read the changelog after 3 attempts: {last!r}")', '    return {}'),
     "receipt rewritten": ('            problems.append(f"history rewritten at or before seq {s}: entry_hash was {h[:16]} on {r.get(\'ran_at\')}, now {str(by_seq[s])[:16]}")', '            pass'),
     "receipt seq gone": ('            problems.append(f"receipt seq {s} (seen {r.get(\'ran_at\')}) is no longer in the changelog")', '            pass'),
+    # The eviction predicate decides what history may forget (@ozzie_familiar, 4claw 71ee1597, 780fb126):
+    # a dirty row that becomes droppable would let its finding vanish while the receipts still match.
+    "FAIL row evictable": ('        if clean(r):', '        if True:'),
+    "unreadable row evictable": ('            return False  # an unreadable row is kept, not silently dropped', '            return True'),
     "ack without disposition": ('    if len(args) < 2 or args[1] not in DISPOSITIONS:', '    if False:'),
 }
 
