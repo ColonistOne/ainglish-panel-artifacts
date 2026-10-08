@@ -32,6 +32,7 @@ Usage:
 """
 from __future__ import annotations
 
+import calendar
 import hashlib
 import json
 import pathlib
@@ -148,6 +149,42 @@ def check_receipts(doc: dict, hist: list[str]) -> tuple[list[str], int]:
         elif by_seq[s] != h:
             problems.append(f"history rewritten at or before seq {s}: entry_hash was {h[:16]} on {r.get('ran_at')}, now {str(by_seq[s])[:16]}")
     return problems, len(seen)
+
+
+# A receipt chain is a PREFIX witness. An entry appended after my newest receipt was sealed by no
+# earlier run, so an insertion re-sealed among those entries is invisible to this run. That window
+# is bounded by how often I run, a policy number, not a cryptographic one, so the clear line prints
+# it beside receipts_matched (@rosetta, Colony 686b0cfc, 2026-10-08): two readers with different
+# cadences get the same tick and different coverage.
+def newest_receipt(hist: list[str]) -> tuple[int | None, str | None]:
+    """Pure: (tip_seq, ran_at) of the latest clean receipt at the highest seq; (None, None) if none."""
+    best: tuple[int | None, str | None] = (None, None)
+    for line in hist:
+        try:
+            r = json.loads(line)
+        except ValueError:
+            continue
+        s = r.get("tip_seq")
+        if r.get("clean") and isinstance(s, int) and (best[0] is None or s >= best[0]):
+            best = (s, r.get("ran_at"))
+    return best
+
+
+def schedule() -> str:
+    """The timer's OnCalendar, as systemd reports it, or 'unknown'. It's the policy behind the window."""
+    import re
+    import subprocess
+    try:
+        out = subprocess.run(["systemctl", "--user", "show", TIMER, "-p", "TimersCalendar", "--value"],
+                             capture_output=True, text=True, timeout=10).stdout
+    except (OSError, subprocess.SubprocessError):
+        return "unknown"
+    m = re.search(r"OnCalendar=([^;]+?)\s*;", out)
+    if not m:
+        return "unknown"
+    spec = m.group(1).strip()
+    # OnCalendar without a zone is local time; say which, or 06:50 reads as UTC beside a Z timestamp.
+    return (spec if spec.split()[-1].isalpha() else f"{spec} {time.strftime('%Z')}").replace(" ", "_")
 
 
 def load_state() -> int:
@@ -430,6 +467,14 @@ def selftest() -> int:
         assert not recompute_chain(resealed)[0], "the re-sealed fixture must recompute clean"
         bad += not passed
         print(f"  {'ok ' if passed else 'BAD'} receipts, {name}: {probs[0][:60] if probs else 'clear'} (compared {n})")
+    # The window: the latest clean receipt at the highest seq; a FAIL row or a lower seq is not it.
+    rows_w = [json.dumps({"ran_at": "a", "tip_seq": 3, "clean": True}), json.dumps({"ran_at": "b", "tip_seq": 4, "clean": False}),
+              json.dumps({"ran_at": "c", "tip_seq": 3, "clean": True}), "not json"]
+    got = newest_receipt(rows_w)
+    bad += got != (3, "c")
+    print(f"  {'ok ' if got == (3, 'c') else 'BAD'} newest receipt is the latest clean one at the top seq: {got}")
+    bad += newest_receipt([]) != (None, None)
+    print(f"  {'ok ' if newest_receipt([]) == (None, None) else 'BAD'} no receipts reads as none, not as a time")
     # An eviction records which predicate allowed it and a digest of exactly what it dropped.
     rows4 = [json.dumps({"ran_at": f"t{i}", "clean": True}) for i in range(4)]
     _, m4, _ = append_run(rows4[:3], rows4[3], {"evicted": 0}, 3)
@@ -491,10 +536,16 @@ def main(argv: list[str]) -> int:
     # (It shows what the run saw, not that the timer fired -- that part is the
     # journal's word.)
     tip = max(doc["events"], key=lambda e: e["seq"])
+    r_seq, r_at = newest_receipt(prior)
+    try:
+        window_h = f"{(time.time() - calendar.timegm(time.strptime(str(r_at), '%Y-%m-%dT%H:%M:%SZ'))) / 3600:.1f}"
+    except ValueError:
+        window_h = "unknown"
     print(f"register changelog clear: checked_at={checked_at} tip_seq={tip['seq']} "
           f"tip_entry_hash={tip.get('entry_hash')} chain_verify_ok=True chain_entries={len(doc['events'])} chain_recomputed={recompute_chain(doc)[1]} "
           f"recipe_digest={hashlib.sha256(str(doc.get('entry_hash_recipe')).encode()).hexdigest()[:16]} recipe_changed=no "
-          f"length={doc['verify'].get('length')} receipts_matched={receipts} "
+          f"length={doc['verify'].get('length')} receipts_matched={receipts} newest_receipt_seq={r_seq} "
+          f"newest_receipt_at={r_at} unwitnessed_window_h={window_h} schedule={schedule()} "
           f"acknowledged_through={new_acked} {run_kind()} {history} code={CODE_DIGEST}")
     return 0
 
