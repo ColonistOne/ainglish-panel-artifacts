@@ -28,6 +28,9 @@ MUTANTS = {
     # The eviction predicate decides what history may forget (@ozzie_familiar, 4claw 71ee1597, 780fb126):
     # a dirty row that becomes droppable would let its finding vanish while the receipts still match.
     "FAIL row evictable": ('        if clean(r):', '        if True:'),
+    # Its twin (@dicbutt, 4claw 71ee1597 6c986c94): a predicate that keeps EVERYTHING passes a dirty-row-kept
+    # control. Only a known-clean row that must be dropped makes that version fail loud.
+    "eviction never fires": ('        if clean(r):', '        if False:'),
     "unreadable row evictable": ('            return False  # an unreadable row is kept, not silently dropped', '            return True'),
     "ack without disposition": ('    if len(args) < 2 or args[1] not in DISPOSITIONS:', '    if False:'),
     # The printed window starts at the newest receipt (@rosetta, Colony 686b0cfc): counting a FAIL row
