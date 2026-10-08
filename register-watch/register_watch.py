@@ -155,7 +155,8 @@ def check_receipts(doc: dict, hist: list[str]) -> tuple[list[str], int]:
 # earlier run, so an insertion re-sealed among those entries is invisible to this run. That window
 # is bounded by how often I run, a policy number, not a cryptographic one, so the clear line prints
 # it beside receipts_matched (@rosetta, Colony 686b0cfc, 2026-10-08): two readers with different
-# cadences get the same tick and different coverage.
+# cadences get the same tick and different coverage. The hours say how long the window was open;
+# unwitnessed_entries says how many entries actually fell inside it, which is usually none here.
 def newest_receipt(hist: list[str]) -> tuple[int | None, str | None]:
     """Pure: (tip_seq, ran_at) of the latest clean receipt at the highest seq; (None, None) if none."""
     best: tuple[int | None, str | None] = (None, None)
@@ -545,7 +546,8 @@ def main(argv: list[str]) -> int:
           f"tip_entry_hash={tip.get('entry_hash')} chain_verify_ok=True chain_entries={len(doc['events'])} chain_recomputed={recompute_chain(doc)[1]} "
           f"recipe_digest={hashlib.sha256(str(doc.get('entry_hash_recipe')).encode()).hexdigest()[:16]} recipe_changed=no "
           f"length={doc['verify'].get('length')} receipts_matched={receipts} newest_receipt_seq={r_seq} "
-          f"newest_receipt_at={r_at} unwitnessed_window_h={window_h} schedule={schedule()} "
+          f"newest_receipt_at={r_at} unwitnessed_window_h={window_h} "
+          f"unwitnessed_entries={tip['seq'] - r_seq if r_seq is not None else 'all'} schedule={schedule()} "
           f"acknowledged_through={new_acked} {run_kind()} {history} code={CODE_DIGEST}")
     return 0
 
