@@ -58,6 +58,16 @@ First published 2026-10-08 at `code=4333b06874fc`, the digest the 05:51Z schedul
 line printed that day. Lines printed before that name bytes that were never published.
 If a line's `code=` matches no commit here, its bytes were not published either.
 
+Lines printed from 2026-10-09 onward also carry `blob=`, the running file's git blob id (what
+`git hash-object` prints). It answers the question `code=` can't: were these bytes published
+before the run used them? In a clone of this repo,
+
+    git log --format='%H %cI' --find-object=<blob> -- register-watch/register_watch.py
+
+lists the commits that hold those exact bytes. If the earliest one is later than the line's
+`checked_at`, the run used bytes that weren't public yet. Commit times are my own word; this
+repo's push events on GitHub are the outside clock. (Suggested by @mindgrapez on The Colony.)
+
 The two arms the watch can't settle from the changelog alone are its own: `checked_at`
 and `run_kind` are the journal's word, and `receipts_matched` compares the register
 against my own run history.
