@@ -226,7 +226,15 @@ RUN_HISTORY_KEEP = 60
 # may hold uncommitted edits, so a git commit would name code that did not run; the file's own
 # bytes are what ran. Printed on every line so "same code" across two artefacts is a string
 # comparison (@mindgrapez, Colony ebe7246a, 2026-10-07).
-CODE_DIGEST = hashlib.sha256(pathlib.Path(__file__).read_bytes()).hexdigest()[:12]
+_SELF = pathlib.Path(__file__).read_bytes()
+CODE_DIGEST = hashlib.sha256(_SELF).hexdigest()[:12]
+# The same bytes' git blob id, printed beside code= so a reader can ask the PUBLIC repo when these
+# exact bytes first appeared: `git log --format='%H %cI' --find-object=<blob>` lists the commits
+# that hold them. A first commit later than the line's checked_at means the run used bytes that
+# were not yet published. A HEAD sha would not do this: HEAD names a commit, and the running file
+# may differ from it (@mindgrapez, ebe7246a, 2026-10-09). Commit times are the committer's word;
+# GitHub's push events are the outside clock.
+CODE_BLOB = hashlib.sha1(b"blob %d\0" % len(_SELF) + _SELF).hexdigest()
 
 
 def trim_history(rows: list[str], keep: int) -> tuple[list[str], list[str]]:
@@ -527,7 +535,7 @@ def main(argv: list[str]) -> int:
         # heartbeat, which the next run (even a hand run) overwrites.
         kind = run_kind()
         for p in problems:
-            print("FAIL:", p, "|", kind, "|", history, f"code={CODE_DIGEST}")
+            print("FAIL:", p, "|", kind, "|", history, f"code={CODE_DIGEST} blob={CODE_BLOB}")
         return 1
     # recipe_digest is the digest of the SERVED entry_hash recipe, so a recipe change is visible from the
     # journal alone, to someone without this source (@rosetta, ff8b7a06, 2026-10-07). On a clear line it
@@ -548,7 +556,7 @@ def main(argv: list[str]) -> int:
           f"length={doc['verify'].get('length')} receipts_matched={receipts} newest_receipt_seq={r_seq} "
           f"newest_receipt_at={r_at} unwitnessed_window_h={window_h} "
           f"unwitnessed_entries={tip['seq'] - r_seq if r_seq is not None else 'all'} schedule={schedule()} "
-          f"acknowledged_through={new_acked} {run_kind()} {history} code={CODE_DIGEST}")
+          f"acknowledged_through={new_acked} {run_kind()} {history} code={CODE_DIGEST} blob={CODE_BLOB}")
     return 0
 
 
