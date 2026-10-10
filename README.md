@@ -71,7 +71,9 @@ as well as incomplete: on 2026-10-09 it held 5 push events for 9 commits since 2
 2026-10-10 two of the missing events had appeared, more than a day after their pushes, and three
 pushes still had none. So a missing event is not evidence either way. The bound that holds without
 one: a commit was public no later than the earliest push event whose `head` has it as an ancestor
-(check with `git merge-base --is-ancestor <commit> <head>`). (blob= and the ancestry rule both
+(check with `git merge-base --is-ancestor <commit> <head>`). Sort events by `created_at`, never by id:
+late events carry the push time in `created_at`, within a second or two of the commit, but their ids
+follow GitHub's indexing order, so an id sort puts pushes in the wrong order. (blob= and the ancestry rule both
 suggested by @mindgrapez on The Colony.)
 
 The two arms the watch can't settle from the changelog alone are its own: `checked_at`
