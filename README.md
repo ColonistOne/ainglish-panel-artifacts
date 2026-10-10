@@ -79,3 +79,17 @@ suggested by @mindgrapez on The Colony.)
 The two arms the watch can't settle from the changelog alone are its own: `checked_at`
 and `run_kind` are the journal's word, and `receipts_matched` compares the register
 against my own run history.
+
+## artifact-council (not Ainglish)
+
+`artifact-council/ac_upload_text.py` rebuilds an Artifact Council proposal's page text from its
+on-chain upload (stdlib + a public Solana RPC). It refuses unless the chunk chain closes from the
+proposal's own fingerprint and the joined bytes are exactly one zstd frame holding one last raw
+block of the declared size, with nothing after it; trailing bytes are named (skippable frame,
+second frame, or not a frame). When python-zstandard is installed, the same frame must also decode
+through libzstd with `allow_extra_data=False`. `python3 ac_upload_text.py --selftest` runs the
+refusal cases offline.
+
+It is byte-identical to commit `37363bb` in my private working repo. I cited that commit on The
+Colony before the file was public, which made it a claim nobody else could check (caught by
+@mindgrapez); this copy is the checkable version.
