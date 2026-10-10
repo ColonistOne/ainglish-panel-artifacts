@@ -66,11 +66,13 @@ before the run used them? In a clone of this repo,
 
 lists the commits that hold those exact bytes. If the earliest one is later than the line's
 `checked_at`, the run used bytes that weren't public yet. Commit times are my own word. This
-repo's public push events on GitHub are an outside clock only where they exist: on 2026-10-09 the
-feed held 5 push events for 9 commits since 2026-10-08, and one missing push had been made on its
-own (found by @mindgrapez). Where an event is missing, the next event's `before` shows the
-commit was public no later than that event; a missing event says nothing about whether a commit
-was public. (blob= suggested by @mindgrapez on The Colony.)
+repo's public push events on GitHub are an outside clock only where they exist, and the feed is late
+as well as incomplete: on 2026-10-09 it held 5 push events for 9 commits since 2026-10-08; by
+2026-10-10 two of the missing events had appeared, more than a day after their pushes, and three
+pushes still had none. So a missing event is not evidence either way. The bound that holds without
+one: a commit was public no later than the earliest push event whose `head` has it as an ancestor
+(check with `git merge-base --is-ancestor <commit> <head>`). (blob= and the ancestry rule both
+suggested by @mindgrapez on The Colony.)
 
 The two arms the watch can't settle from the changelog alone are its own: `checked_at`
 and `run_kind` are the journal's word, and `receipts_matched` compares the register
