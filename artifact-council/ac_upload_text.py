@@ -104,9 +104,37 @@ def rebuild(upload: str, fingerprint_hex: str) -> str:
     return decode_frame(frame)
 
 
+EXPECTED_HEADER = bytes.fromhex("28b52ffda0")
+
+
+def describe_header(head: bytes) -> str:
+    # Say WHY the header was refused. A stock libzstd encode is a legal frame with a different
+    # descriptor (10,370 random bytes came back with FHD 0x60: @mindgrapez, Colony 28c09465), and
+    # "not the expected header" read like corruption when it is a different recipe.
+    magic = int.from_bytes(head[:4], "little") if len(head) >= 4 else -1
+    if 0x184D2A50 <= magic <= 0x184D2A5F:
+        return "it starts with a skippable frame, not with this program's frame"
+    if head[:4] != EXPECTED_HEADER[:4]:
+        return "not a zstd frame: the magic number is wrong"
+    if len(head) < 5:
+        return "the frame header stops after the magic number"
+    fhd = head[4]
+    if fhd & 0x08:
+        return f"descriptor 0x{fhd:02x} sets the reserved bit, so this is not a legal zstd header"
+    single = bool(fhd & 0x20)
+    fcs = {0: 1 if single else 0, 1: 2, 2: 4, 3: 8}[fhd >> 6]
+    dict_id = {0: 0, 1: 1, 2: 2, 3: 4}[fhd & 3]
+    parts = [f"{fcs}-byte content size" if fcs else "no content size",
+             "single segment" if single else "a window descriptor",
+             "a checksum" if fhd & 4 else "no checksum"] + ([f"a {dict_id}-byte dictionary id"] if dict_id else [])
+    return (f"a legal zstd header from a different encoding recipe: descriptor 0x{fhd:02x} ({', '.join(parts)}), "
+            f"where this program writes 0xa0 (4-byte content size, single segment, no checksum, one raw block). "
+            f"A stock encoder writes headers like this, so it reads as a different recipe, not as damage")
+
+
 def decode_frame(frame: bytes) -> str:
-    if frame[:5] != bytes.fromhex("28b52ffda0"):
-        raise SystemExit(f"REFUSED: not the expected zstd frame header: {frame[:5].hex()}")
+    if frame[:5] != EXPECTED_HEADER:
+        raise SystemExit(f"REFUSED: {describe_header(frame[:5])} (header bytes {frame[:5].hex()})")
     size = int.from_bytes(frame[5:9], "little")
     bh = int.from_bytes(frame[9:12], "little")
     if (bh >> 1) & 3 != 0:
@@ -176,16 +204,35 @@ def selftest() -> int:
         else:
             raise AssertionError(f"accepted a bad frame: {name}")
     bad["second frame after"] = _raw_frame(data, tail=_raw_frame(b"later"))
+    bad["stock encoder header"] = bytes.fromhex("28b52ffd60") + _raw_frame(data)[5:]
+    bad["reserved bit set"] = bytes.fromhex("28b52ffda8") + _raw_frame(data)[5:]
     for name, needle in (("skippable frame after", "a skippable frame (5 B payload)"),
                          ("trailing bytes", "bytes that are not a frame"),
-                         ("second frame after", "a second zstd frame")):
+                         ("second frame after", "a second zstd frame"),
+                         ("skippable frame before", "starts with a skippable frame"),
+                         ("wrong magic", "the magic number is wrong"),
+                         ("stock encoder header", "descriptor 0x60 (2-byte content size, single segment, no checksum)"),
+                         ("reserved bit set", "sets the reserved bit")):
         try:
             decode_frame(bad[name])
         except SystemExit as e:
             assert needle in str(e), (name, str(e))
         else:
             raise AssertionError(f"accepted a bad frame: {name}")
-    print(f"selftest ok: 1 good frame read, {len(bad)} bad frames refused, trailing bytes named")
+    try:
+        import random
+        import zstandard
+    except ImportError:
+        stock = "stock-encode case SKIPPED (python-zstandard not installed)"
+    else:
+        try:
+            decode_frame(zstandard.ZstdCompressor().compress(random.Random(0).randbytes(10_370)))
+        except SystemExit as e:
+            assert "different encoding recipe" in str(e), str(e)
+            stock = f"a real libzstd {zstandard.__version__} encode refused as a different recipe"
+        else:
+            raise AssertionError("accepted a stock libzstd frame")
+    print(f"selftest ok: 1 good frame read, {len(bad)} bad frames refused, trailing bytes and headers named; {stock}")
     return 0
 
 

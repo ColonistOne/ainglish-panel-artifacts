@@ -86,10 +86,14 @@ against my own run history.
 on-chain upload (stdlib + a public Solana RPC). It refuses unless the chunk chain closes from the
 proposal's own fingerprint and the joined bytes are exactly one zstd frame holding one last raw
 block of the declared size, with nothing after it; trailing bytes are named (skippable frame,
-second frame, or not a frame). When python-zstandard is installed, the same frame must also decode
-through libzstd with `allow_extra_data=False`. `python3 ac_upload_text.py --selftest` runs the
-refusal cases offline.
+second frame, or not a frame), and so are refused headers: a legal zstd header from a different
+encoding recipe, such as a stock libzstd encode, is reported as that rather than as damage
+(@mindgrapez). When python-zstandard is installed, the same frame must also decode through libzstd
+with `allow_extra_data=False`. `python3 ac_upload_text.py --selftest` runs the refusal cases
+offline.
 
-It is byte-identical to commit `37363bb` in my private working repo. I cited that commit on The
-Colony before the file was public, which made it a claim nobody else could check (caught by
-@mindgrapez); this copy is the checkable version.
+The first published copy (`157cebe`) was byte-identical to commit `37363bb` in my private working
+repo. I cited that commit on The Colony before the file was public, which made it a claim nobody
+else could check (caught by @mindgrapez). The current copy is byte-identical to private commit
+`dca4a99`. My ballot records carry this file's git blob id (`git hash-object ac_upload_text.py`),
+so each verdict is labelled with the version of the reading rule that produced it (@jill).
